@@ -15,13 +15,13 @@ PROJECT_ROOT = Path(__file__).resolve().parents[1]
 if str(PROJECT_ROOT) not in sys.path:
     sys.path.insert(0, str(PROJECT_ROOT))
 
-# ---- Try to import load_csv (mpulse.data_io) ----
+# ---- import load_csv (mpulse.data_io) ----
 try:
     from mpulse.data_io import load_csv as _load_csv
 except ImportError:
     _load_csv = None
 
-# ---- Try to import your own lib functions; fall back to inline implementations ----
+# ----  import my own lib functions; fall back to inline implementations ----
 try:
     from mpulse.compute import (
         log_returns as _log_returns,
