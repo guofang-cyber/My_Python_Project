@@ -19,8 +19,7 @@ def align_and_clean(prices: pd.DataFrame) -> pd.DataFrame:
     df = prices.sort_index()
     # Drop rows where ALL columns are NaN
     df = df.dropna(how="all")
-    # Forward fill (propagate last valid observation) -> handle holidays
-    # Note: method='ffill' is deprecated in recent pandas, use ffill() method directly.
+    
     df = df.ffill()
     # Drop initial rows that are still NaN (before the first valid price)
     df = df.dropna(how="any")

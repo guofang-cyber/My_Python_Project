@@ -4,7 +4,7 @@ import pandas as pd
 from pathlib import Path
 
 # === Anchor to project root ===
-# Ensures figures are saved in the correct folder relative to this file
+
 ROOT = Path(__file__).resolve().parents[1]
 FIG_DIR = ROOT / "figures"
 FIG_DIR.mkdir(exist_ok=True)
