@@ -28,7 +28,7 @@ market-pulse-cn/
 │   ├── data_io.py          # Data ingestion & error handling
 │   ├── compute.py          # Scientific computing (NumPy/Pandas)
 │   ├── viz.py              # Visualization (Matplotlib)
-│   └── utils.py            # Helper functions
+
 ├── presentation/
 │   ├── figures/            # Notebook-generated assets
 │   └── final.ipynb         # Presentation layer (Jupyter Notebook)
