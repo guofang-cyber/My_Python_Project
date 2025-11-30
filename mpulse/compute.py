@@ -90,7 +90,7 @@ def sharpe_ratio(returns: pd.DataFrame, rf_annual: float = 0.0, trading_days: in
         pd.Series: Sharpe ratio for each asset.
     """
     # Convert annual risk-free rate to daily equivalent approximation is negligible for ranking,
-    # but here we usually adjust the numerator annually: (Mean * 252 - Rf)
+    # but here I adjust the numerator annually: (Mean * 252 - Rf)
     mean_ret_annual = returns.mean() * trading_days
     vol_annual = returns.std() * np.sqrt(trading_days)
     
@@ -157,7 +157,7 @@ def period_performance(
     out = pd.DataFrame(index=[p[0] for p in periods], columns=cols, dtype=float)
 
     for label, start, end in periods:
-        # Slicing with .loc handles dates intelligently
+        # Slicing with .loc handles dates 
         subp = prices.loc[start:end]
         
         if subp.empty:
@@ -171,7 +171,7 @@ def period_performance(
         sharpe = sharpe_ratio(rets, rf_annual, trading_days)
         
         # Assign to the output table
-        # Using slice(None) effectively selects all assets for that metric
+        # Using slice(None)  selects all assets for that metric
         out.loc[label, ("CumRet", slice(None))] = cumret.values
         out.loc[label, ("AnnVol", slice(None))] = vol.values
         out.loc[label, ("Sharpe", slice(None))] = sharpe.values

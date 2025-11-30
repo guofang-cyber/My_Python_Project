@@ -25,7 +25,7 @@ def download_prices(tickers: List[str], start: str = "2015-01-01") -> pd.DataFra
     if df.empty:
         raise RuntimeError("API returned empty data. Check your internet or tickers.")
 
-    # Handle MultiIndex columns if necessary
+    
     if isinstance(df.columns, pd.MultiIndex):
         try:
             df = df["Close"]
