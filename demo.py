@@ -12,7 +12,7 @@ from mpulse.compute import (
 from mpulse.viz import plot_prices, plot_rolling_vol, plot_corr_heatmap, plot_drawdown_curves
 
 def main():
-    # ---- Setup: Ensure output directories exist ----
+    # ---- Setup ----
     Path("figures").mkdir(exist_ok=True)
     Path("data").mkdir(exist_ok=True)
 
@@ -27,7 +27,7 @@ def main():
     save_csv(prices, "clean_prices")
     print("Data downloaded and cleaned successfully.")
 
-    # ---- 3. Basic Metrics Calculation ----
+    # ---- 3.  Metrics Calculation ----
     rets = log_returns(prices)
     
     print("\n--- Annualized Volatility ---")
