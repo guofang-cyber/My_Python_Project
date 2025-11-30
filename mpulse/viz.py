@@ -58,7 +58,7 @@ def plot_corr_heatmap(returns: pd.DataFrame, title: str = "Correlation Matrix"):
     
     fig, ax = plt.subplots(figsize=(8, 6))
     
-    # Use seaborn for a more professional look with annotations
+
     sns.heatmap(
         corr, 
         annot=True, 
