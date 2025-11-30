@@ -40,7 +40,7 @@ def main():
     print(max_drawdown(prices).round(3))
 
     # ---- 4. Visualization Generation ----
-    # Charts will be saved to the 'figures/' directory
+    
     print("\nGenerating plots...")
     plot_prices(prices, "China Focus: Prices")
     plot_rolling_vol(rets, 63, "China Focus: Rolling Vol (63d)")
