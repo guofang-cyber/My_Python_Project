@@ -21,7 +21,7 @@ def main():
     print(f"Starting analysis for: {tickers}")
 
     # ---- 2. Data Ingestion & Cleaning ----
-    # Note: download_prices now has built-in error handling (see mpulse/data_io.py)
+
     prices = download_prices(tickers, start="2018-01-01")
     prices = align_and_clean(prices)
     save_csv(prices, "clean_prices")
